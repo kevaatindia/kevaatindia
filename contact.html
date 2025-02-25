@@ -6,8 +6,8 @@
     <title>Contact Us</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,9 +18,9 @@
         
         .contact-container {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 500px;
             text-align: center;
@@ -29,35 +29,40 @@
         h1 {
             margin-bottom: 20px;
             color: #333;
+            font-size: 28px;
+            font-weight: 600;
         }
         
         .contact-info {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .icon {
             font-size: 24px;
             margin-right: 10px;
+            color: #007BFF;
         }
         
         .text {
-            font-size: 18px;
+            font-size: 16px;
             color: #555;
         }
         
         a {
             color: #007BFF;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         a:hover {
+            color: #0056b3;
             text-decoration: underline;
         }
         
@@ -67,43 +72,57 @@
         }
         
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-align: left;
         }
         
         label {
-            font-size: 16px;
+            font-size: 14px;
             color: #333;
             margin-bottom: 5px;
             display: block;
+            font-weight: 500;
         }
         
         input, textarea {
             width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
             box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
         }
         
         button {
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 16px;
             color: #fff;
             background-color: #007BFF;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         
         button:hover {
             background-color: #0056b3;
         }
+        .logo {
+            max-width: 100px; /* Adjust the size as needed */
+            display: block;
+            margin: 0 auto 10px;
+          }
     </style>
 </head>
 <body>
     <div class="contact-container">
+        <img src="images\Kevaat_logo.png" alt="Logo" class="logo">
         <h1>Contact Us</h1>
         <p>If you have any questions or need further information, feel free to reach out to us via email or mobile.</p>
         
@@ -111,12 +130,11 @@
             <div class="contact-item">
                 <span class="icon">📧</span>
                 <div class="text">Email: <a href="mailto:contact@kevaat.com">contact@kevaat.com</a></div>
-                 <div class="text"><a href="mailto:kevaatindia@gmail.com">kevaatindia@gmail.com</a></div>
             </div>
-            <!-- <div class="contact-item">
-                <span class="icon">📞</span>
-                <span class="text">Mobile: <a href="6280609758">+91 6280609758</a></span>
-            </div> -->
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <div class="text">Email: <a href="mailto:kevaatindia@gmail.com">kevaatindia@gmail.com</a></div>
+            </div>
         </div>
 
         <form name="contactForm" id="contactForm">
@@ -163,7 +181,6 @@
           alert("An error occurred. Please check your connection and try again.");
         }
       });
-   
     </script>
 </body>
 </html>

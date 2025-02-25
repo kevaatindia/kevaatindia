@@ -610,10 +610,16 @@ display: inline-block;
 .mentor-card p {
   font-size: 14px;
   margin: 5px 0 0;
-  color: black;
-  font-weight: 600;
-  height: 40px; /* Fixed height for the text container */
+  color: black; 
   overflow: hidden;
+  font-weight: 600;
+  line-height: 1.4; /* Added line height for better readability */
+  height: 60px; /* Increased height to accommodate more text */
+  text-align: center;
+  word-wrap: break-word;
+  display: block;
+  white-space: normal; /* Allows text to wrap naturally */
+  
 }
 
 @keyframes marquee {
@@ -626,7 +632,7 @@ display: inline-block;
 }
 @media (max-width: 768px) {
   #mentors h2 {
-    font-size: 1.8rem; /* Further reduced font size for tablets */
+    font-size: 2.1rem; /* Further reduced font size for tablets */
   }
 
   .mentor-card {
@@ -651,16 +657,17 @@ display: inline-block;
 
 @media (max-width: 480px) {
   #mentors h2 {
-    font-size: 1.5rem; /* Further reduced font size for mobile */
+    font-size: 2rem; /* Further reduced font size for mobile */
   }
 
   .mentors-container {
     padding: 20px 0; /* Further reduced padding for mobile */
+    margin-bottom: 35px;
   }
 
   .mentor-card {
     width: 150px; /* Adjusted width for mobile */
-    height: 220px; /* Adjusted height for mobile */
+    height: 240px; /* Adjusted height for mobile */
     margin-right: 8px; /* Further reduced margin for mobile */
   }
 
@@ -1019,6 +1026,10 @@ width: 18px;
 @media (max-width: 600px) {
   .founder-card {
     margin-bottom: 40px;
+    
+  }
+  #our-founders h2  {
+    font-size: 2rem;
     
   }
 }
