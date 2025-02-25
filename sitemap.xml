@@ -9,7 +9,33 @@
 
 <url>
   <loc>https://www.kevaat.com/</loc>
-  <lastmod>2025-02-22T08:02:44+00:00</lastmod>
+  <lastmod>2025-02-25T13:10:23+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.kevaat.com/registration.html</loc>
+  <lastmod>2025-02-25T13:10:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.kevaat.com/about.html</loc>
+  <lastmod>2025-02-25T13:10:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.kevaat.com/contact.html</loc>
+  <lastmod>2025-02-25T13:10:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.kevaat.com/terms.html</loc>
+  <lastmod>2025-02-25T13:10:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.kevaat.com/privacy.html</loc>
+  <lastmod>2025-02-25T13:10:23+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 
