@@ -85,6 +85,7 @@ body{
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
+    margin-left: 34px;
   }
   
   .navbar-brand img {
@@ -113,12 +114,23 @@ body{
   .navbar-toggler {
     border: none;
     outline: none;
+    background: transparent;
   }
   
   .navbar-toggler:focus {
     box-shadow: none;
   }
-  
+  .navbar-toggler i {
+    font-size: 24px;  /* Adjust icon size */
+    color: #333;      /* Change icon color */
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover i {
+    transform: scale(1.1);  /* Slight zoom on hover */
+    color: #007bff;  /* Change color on hover */
+}
+
 .nav-item{
     font-weight: bold;
     margin-right: 12px;
@@ -161,10 +173,11 @@ body{
       left: 18px;
       margin-bottom: 5px;
       transform: scale(0.8);  /* Moves it right */
-    }
-  }
+      margin-left: 22px;
+    }}
+   
   
-
+ 
 
   /* Marquee section */
  .marquee {
@@ -177,7 +190,7 @@ body{
   
   .marquee-content {
     display: inline-block;
-    animation: marquee 30s linear infinite;
+    animation: marquee 8s linear infinite;
   }
   
   .marquee-content img {
