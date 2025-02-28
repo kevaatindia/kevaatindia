@@ -170,15 +170,12 @@ body{
   @media (max-width: 768px) {
     .navbar-brand {
       position: relative;
-      left: 18px;
+     margin-left: 18px;
       margin-bottom: 5px;
       transform: scale(0.8);  /* Moves it right */
-      margin-left: 22px;
+      
     }}
    
-  
- 
-
   /* Marquee section */
  .marquee {
     width: 100%;
