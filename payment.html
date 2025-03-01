@@ -21,7 +21,7 @@
             border-radius: 10px;
         }
         .logo {
-            max-width: 100px; /* Adjust the size as needed */
+            max-width: 100px; 
             display: block;
             margin: 0 auto 10px;
           }
@@ -31,19 +31,18 @@
         .payment-options {
             margin: 20px 0;
         }
-        .qr-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: #f1f1f1;
-            padding: 35px;
-            border-radius: 8px;
+       .qr-container {
+            padding: 20px; /* Adds padding around the image */
+            background: #f1f1f1; /* Optional: Adds a background color */
+            border-radius: 8px; /* Optional: Adds rounded corners */
+            margin: 20px 0;
         }
         .qr-container img {
-            width: 300px;
-            height: 350px;
+            max-width: 100%; /* Ensures the image scales down to fit the container */
+            height: auto; /* Maintains the aspect ratio */
             border-radius: 8px;
+            display: block;
+            margin: 0 auto;
         }
         .payment-btn {
             background-color: #007bff;
@@ -75,13 +74,12 @@
     <div class="container">
         <img src="images\Kevaat_logo.png" alt="Logo" class="logo">
         <h2>Complete Your Payment</h2>
-        <!-- <p>Amount: <strong>₹499</strong></p> -->
 
         <div class="payment-options">
             <h3>Scan & Pay Using UPI (Google Pay, Paytm, PhonePe)</h3>
-            <div class="qr-container">
-            <img id="qr-code" src="images\qr.PNG" alt="Scan QR Code to Pay">
-        </div>
+             <div class="qr-container"> 
+            <img id="qr-code" src="images\QR Code.jpg" alt="Scan QR Code to Pay">
+         </div> 
             <!-- <p>OR use this UPI ID: <strong>kevaatindia@oksbi</strong></p> -->
 
             <!-- <h3>Other Payment Methods</h3> -->
@@ -90,7 +88,6 @@
             <!-- <button class="payment-btn" onclick="window.location.href='https://upilinks.in/payment-link/upi1473788875'">Pay via Direct Link</button> -->
         </div>
 
-        <!-- Button to confirm payment and proceed -->
         <button id="confirm-payment" class="payment-btn" onclick="window.location.href='thank-you.html'">I Have Paid</button>
     </div>
 
