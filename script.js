@@ -76,9 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 const universities = [
   "Acharya Institute of Technology, Bengaluru",
-  "Amity University, Noida",
-  "Amrita School of Engineering, Bengaluru",
-  "Amrita Vishwa Vidyapeetham, Coimbatore",
+  "Amity University",
+  "Amrita Vishwa Vidyapeetham",
   "Banasthali Vidyapeeth, Banasthali",
   "Bharati Vidyapeeth Deemed University College of Engineering, Pune",
   "Bharath Institute of Higher Education and Research, Chennai",
@@ -89,6 +88,7 @@ const universities = [
   "Chandigarh Group of Colleges (CGC), Landran",
   "Chandigarh University, Mohali",
   "Chitkara University, Punjab",
+  "Christ University",
   "CMR University, Bengaluru",
   "Dayananda Sagar College of Engineering, Bengaluru",
   "Dr. DY Patil University, Navi Mumbai",
