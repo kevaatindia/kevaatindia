@@ -162,6 +162,21 @@ body{
     color: #4A90E2 !important; /* Slight zoom effect */
     
   }
+  .email-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.email-btn:hover {
+    background-color: #0056b3;
+}
+
   
   /* Arrow animation on hover */
   .nav-link.call-btn:hover .arrow {
