@@ -121,7 +121,7 @@ const universities = [
   "Symbiosis International University, Pune",
   "Thapar Institute of Engineering and Technology, Patiala",
   "University of Petroleum and Energy Studies, Dehradun",
-  "Vellore Institute of Technology, Vellore",
+  "Vellore Institute of Technology",
   "Others",
 ];
 
