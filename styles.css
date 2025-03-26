@@ -41,7 +41,80 @@ body{
   transform: scale(1.05);
   color: #4A90E2;
 }
+.kevaat-typing-box {
+  width: 540px;
+  max-width: 90%;
+  border-radius: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  margin: 1.5rem auto;
+}
 
+.typing-container {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  justify-content: center;
+  gap: 12px;
+}
+
+.typing-input {
+  font-size: 18px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  flex-grow: 1;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+.typing-cursor {
+  animation: blink 1.5s infinite;
+  font-weight: 600;
+  margin-left: 4px;
+  color: rgba(255,255,255,0.8);
+  height: 24px;
+  width: 2px;
+  background: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .kevaat-typing-box {
+    padding: 10px 16px;
+  }
+  
+  .typing-input {
+    font-size: 16px;
+  }
+  
+  .search-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .typing-cursor {
+    height: 20px;
+  }
+}
 @media screen and (max-width: 600px) {
   .hero{
     height: 100vw;

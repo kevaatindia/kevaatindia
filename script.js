@@ -178,3 +178,40 @@ document.addEventListener("click", function (event) {
 });
 
 window.onload = populateDropdown;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const phrases = [
+    "Talk to students from any university across India!",
+    "Speak directly with students from any university in India!",
+    // "Connect with current students",
+    // "Discover the best Indian universities"
+  ];
+  
+  let currentPhrase = 0;
+  let currentLetter = 0;
+  let isDeleting = false;
+  const typingElement = document.getElementById('kevaat-typing-text');
+  
+  function type() {
+    const text = phrases[currentPhrase];
+    
+    if (!isDeleting && currentLetter <= text.length) {
+      typingElement.textContent = text.substring(0, currentLetter);
+      currentLetter++;
+      setTimeout(type, 20 + Math.random() * 20);
+    } 
+    else if (isDeleting && currentLetter >= 0) {
+      typingElement.textContent = text.substring(0, currentLetter);
+      currentLetter--;
+      setTimeout(type, 30);
+    } 
+    else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) currentPhrase = (currentPhrase + 1) % phrases.length;
+      setTimeout(type, isDeleting ? 500 : 300);
+    }
+  }
+  
+  // Start after 1 second
+  setTimeout(type, 1000);
+});
