@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!isDeleting && currentLetter <= text.length) {
       typingElement.textContent = text.substring(0, currentLetter);
       currentLetter++;
-      setTimeout(type, 20 + Math.random() * 20);
+      setTimeout(type, 20 + Math.random() * 30);
     } 
     else if (isDeleting && currentLetter >= 0) {
       typingElement.textContent = text.substring(0, currentLetter);
@@ -207,10 +207,20 @@ document.addEventListener('DOMContentLoaded', function() {
     } 
     else {
       isDeleting = !isDeleting;
-      if (!isDeleting) currentPhrase = (currentPhrase + 1) % phrases.length;
-      setTimeout(type, isDeleting ? 500 : 300);
+      if (!isDeleting)
+        {
+          // Move to next phrase
+          currentPhrase = (currentPhrase + 1) % phrases.length;
+          // Short pause before typing next phrase
+          setTimeout(type, 200);
+        } else {
+          // Long 3-second pause before deleting
+          setTimeout(type, 2000);
+        }
+      }
+      
     }
-  }
+  
   
   // Start after 1 second
   setTimeout(type, 1000);
