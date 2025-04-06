@@ -5,7 +5,7 @@ body{
 }
 /*hero section*/
 .hero {
-    background: url('images/backlogo.jpg') center;
+    background: url('images/banner.png') center;
     height: 85vh;
     background-size: 100% 100%;   
     background-repeat: no-repeat;
@@ -87,6 +87,7 @@ body{
 }
 
 /* Responsive adjustments */
+
 @media (max-width: 576px) {
   .kevaat-typing-box {
     padding: 10px 16px;
@@ -400,12 +401,166 @@ iframe:hover {
 }
 }
 
+/* why believe section */
+.why-believe-section {
+  padding: 80px 0;
+  text-align: center;
+  overflow: hidden;
+ /* border: 2px solid black;*/
+  margin: 0 auto; 
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.stat-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4f46e5, #10b981);
+}
+
+.stat-icon {
+  width: 250px;
+  height: 250px;
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+#iconbg{
+  background: linear-gradient(135deg, #e0e7ff, #d1fae5);
+  
+}
+.stat-icon img {
+  width: 300px;
+  height: 300px;
+}
+
+.stat-content {
+  text-align: left;
+}
+
+.stat-number {
+  font-size: 66px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 5px;
+  background: linear-gradient(90deg, #4f46e5, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 22px;
+  color: #666;
+  font-weight: 500;
+  line-height: 1.5;
+}
+/* Large devices (desktops up to 1200px) */
+@media (max-width: 1200px) {
+  .stat-item {
+    padding: 25px;
+  }
+  .stat-icon {
+    width: 200px;
+    height: 200px;
+  }
+  .stat-icon img {
+    width: 200px;
+    height: 200px;
+  }
+  .stat-number {
+    font-size: 56px;
+  }
+}
+
+
+/* Small devices (mobile phones up to 768px) */
+@media (max-width: 768px) {
+  .stat-item {
+    max-width: 100%;
+    padding: 20px;
+    
+  }
+
+  .stat-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .stat-icon img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-label {
+    font-size: 16px;
+  }
+}
+
+/* Extra small devices (small phones up to 576px) */
+@media (max-width: 576px) {
+  .stat-item {
+    padding: 15px;
+  }
+
+  .stat-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .stat-icon img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}
+
+
+
 /*   How It Works Section */
 #how-it-works {
   text-align: center;
   overflow: hidden;
- 
-  /* border: 2px solid red; */
+  /*  border: 2px solid red; */
 }
 
 #how-it-works h2 {
@@ -413,7 +568,6 @@ iframe:hover {
   font-weight: 700;
   color: #2A5C82; 
   margin-bottom: 50px;
-  margin-top: 40px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;

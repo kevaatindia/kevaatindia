@@ -225,3 +225,61 @@ document.addEventListener('DOMContentLoaded', function() {
   // Start after 1 second
   setTimeout(type, 1000);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const counters = document.querySelectorAll('.stat-number');
+  const speed = 300; // The lower the faster
+  
+  counters.forEach(counter => {
+      const target = +counter.getAttribute('data-count');
+      const count = +counter.innerText.replace('+', '');
+      const increment = target / speed;
+      
+      if (count < target) {
+          counter.innerText = Math.ceil(count + increment) + '+';
+          setTimeout(updateCount, 1);
+      } else {
+          counter.innerText = target + '+';
+      }
+      
+      function updateCount() {
+          const count = +counter.innerText.replace('+', '');
+          const increment = target / speed;
+          
+          if (count < target) {
+              counter.innerText = Math.ceil(count + increment) + '+';
+              setTimeout(updateCount, 1);
+          } else {
+              counter.innerText = target + '+';
+          }
+      }
+  });
+  
+  // Animation on scroll
+  const statItems = document.querySelectorAll('.stat-item');
+  
+  const animateOnScroll = () => {
+      statItems.forEach(item => {
+          const itemTop = item.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (itemTop < windowHeight - 100) {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+          }
+      });
+  };
+  
+  // Set initial state
+  statItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+  
+  // Run once on load
+  animateOnScroll();
+  
+  // Run on scroll
+  window.addEventListener('scroll', animateOnScroll);
+});
