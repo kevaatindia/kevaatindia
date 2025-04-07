@@ -3,7 +3,7 @@ body{
   background: linear-gradient(135deg, #F2F2F2, #ffffff);
   
 }
-/*hero section*/
+/*hero section
 .hero {
     background: url('images/banner.png') center;
     height: 85vh;
@@ -24,7 +24,61 @@ body{
   align-items: center; 
   text-align: center; 
 }
+*/
+/* Hero section - base styles */
+.hero {
+  background: url('images/bg.png') center/cover no-repeat;
+  min-height: 85vh;  /* Changed from height to min-height */
+  display: flex;
+  background-size: 100% 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* Center content vertically */
+  text-align: center;
+  padding: 2rem 1rem;  /* Added some padding */
+  position: relative;
+}
 
+/* Content box positioning */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;  /* Removed fixed margin-top */
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .hero {
+      background: url('images/univhero.png') center/cover no-repeat;
+      min-height: 70vh;  /* Smaller height for mobile */
+  }
+}
+
+/* Very small mobile devices */
+@media screen and (max-width: 480px) {
+  .hero {
+      min-height: 60vh;  /* Even smaller height for very small devices */
+  }
+  
+  .box h1 {
+      font-size: 1.6rem;
+      line-height: 1.3;
+  }
+}
+
+/* Text shadow for better readability */
+.box h1 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+/* Rest of your existing styles for typing box etc. remain the same */
 .hero a.btn {
   background: #04b93b;
   color: #f9fafa;
