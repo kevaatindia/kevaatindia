@@ -228,58 +228,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const counters = document.querySelectorAll('.stat-number');
-  const speed = 300; // The lower the faster
-  
-  counters.forEach(counter => {
-      const target = +counter.getAttribute('data-count');
-      const count = +counter.innerText.replace('+', '');
-      const increment = target / speed;
-      
-      if (count < target) {
-          counter.innerText = Math.ceil(count + increment) + '+';
-          setTimeout(updateCount, 1);
-      } else {
-          counter.innerText = target + '+';
-      }
-      
-      function updateCount() {
-          const count = +counter.innerText.replace('+', '');
-          const increment = target / speed;
-          
-          if (count < target) {
-              counter.innerText = Math.ceil(count + increment) + '+';
-              setTimeout(updateCount, 1);
-          } else {
-              counter.innerText = target + '+';
-          }
-      }
-  });
-  
-  // Animation on scroll
+  const speed = 400; // The lower the faster
   const statItems = document.querySelectorAll('.stat-item');
-  
-  const animateOnScroll = () => {
-      statItems.forEach(item => {
-          const itemTop = item.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
-          
-          if (itemTop < windowHeight - 100) {
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-          }
-      });
-  };
-  
+  let countingStarted = false; // Flag to track if counting has started
+
   // Set initial state
   statItems.forEach(item => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(20px)';
+    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   });
-  
-  // Run once on load
-  animateOnScroll();
-  
+
+  const animateOnScroll = () => {
+    const statsSection = document.querySelector('.why-believe-section'); // Match your section class
+    if (!statsSection) return;
+
+    const sectionTop = statsSection.getBoundingClientRect().top;
+    const sectionBottom = statsSection.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    // Check if the stats section is in view
+    if (sectionTop < windowHeight - 100 && sectionBottom > 100 && !countingStarted) {
+      countingStarted = true;
+      
+      // Animate the stat items
+      statItems.forEach(item => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      });
+
+      // Start counting animation
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        counter.innerText = '0+'; // Reset to 0 before counting
+        const increment = target / speed;
+        
+        function updateCount() {
+          const current = +counter.innerText.replace('+', '');
+          if (current < target) {
+            counter.innerText = Math.ceil(current + increment) + '+';
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target + '+';
+          }
+        }
+        
+        updateCount();
+      });
+    }
+  };
+
   // Run on scroll
   window.addEventListener('scroll', animateOnScroll);
+  
+  // Run once on load in case the section is already visible
+  animateOnScroll();
 });

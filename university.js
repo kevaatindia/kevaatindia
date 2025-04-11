@@ -1051,7 +1051,7 @@ const universities = [
       location: "Mohali",
       city: "Punjab",
       image: "images/university/Cu.png",
-      link: "/blogs/chandigarh",
+      link: "blogs/chandigarh/",
       rating: 4.2,
       established: 2012,
       courses: ["B.Tech", "B.Com", "B.Des", "LLB", "Pharmacy"],
