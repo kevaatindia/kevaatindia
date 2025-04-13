@@ -551,6 +551,42 @@
         margin-left: 10px;
         vertical-align: middle;
       }
+      @media (max-width: 768px) {
+        /* Move student experience section for mobile */
+        .testimonials {
+          order: -1; /* This will move it before other flex items */
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+        
+        /* Adjust the content-section flex container for mobile */
+        .content-section {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        /* Ensure main content order follows testimonials */
+        .main-content {
+          order: 1;
+        }
+        
+        /* Ensure sidebar comes after main content */
+        .sidebar {
+          order: 2;
+        }
+        
+        /* Remove the student experience section from sidebar in mobile */
+        .sidebar .testimonials {
+          display: none;
+        }
+      }
+    
+      /* Add this to show the student experience section only in mobile in its new position */
+      @media (min-width: 769px) {
+        .mobile-testimonials {
+          display: none;
+        }
+      }
     </style>
     <link
       rel="stylesheet"
@@ -568,7 +604,19 @@
       </a>
 
       <header class="university-header"></header>
-
+ <!-- Add this right after the university-header in your HTML -->
+ <div class="mobile-testimonials">
+  <section class="testimonials">
+    <h2 class="section-title">Student Experiences</h2>
+    <div class="student-connect-cta">
+      <p>
+        Want to talk directly with current students at Chitkara University?
+      </p>
+      <a href="https://www.kevaat.com" class="connect-button" target="_blank">
+        Register for a 30-minute 1-on-1 Video Call
+      </a>
+    </div>
+  </section>
       <div class="content-section">
         <main class="main-content">
           <section class="about-section">
