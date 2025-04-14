@@ -831,6 +831,54 @@ iframe:hover {
   }
 }
 
+/* Second Marquee Styling */
+
+#featured-2 h2{
+  font-size: 2.5rem;
+    font-weight: 700;
+    color: #2A5C82; 
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  
+  }
+  
+.featured-marquee-2 {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #f1f1f1;
+  padding: 10px 0;
+}
+
+.marquee-content-2 {
+  display: inline-block;
+  animation: marquee-animation-2 15s linear infinite;
+}
+
+.marquee-content-2 img {
+  height: 60px; /* Larger size as requested */
+  margin-right: 70px;
+}
+
+@keyframes marquee-animation-2 {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .marquee-content-2 img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-content-2 img {
+    height: 50px;
+  }
+}
 /* Mentor Grid Section - Aesthetic Enhancements */
 
 #mentors {
