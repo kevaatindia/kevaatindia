@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amity University | Kevaat</title>
+    <style>
+      :root {
+        --primary-color: #003366;
+        --primary-dark: #002244;
+        --primary-light: #3d5a80;
+        --secondary-color: #ff6600;
+        --secondary-dark: #cc5200;
+        --accent-color: #6699cc;
+        --light-bg: #f5f7fa;
+        --dark-text: #2d3748;
+        --light-text: #4a5568;
+        --lighter-text: #718096;
+        --border-color: #e2e8f0;
+        --success-color: #38a169;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      body {
+        background-color: #f8fafc;
+        color: var(--dark-text);
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      .university-header {
+        background: url(../../images/university/amity.jpg);
+        height: 280px;
+        position: relative;
+        margin-bottom: 60px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 10px 30px rgba(0, 51, 102, 0.2);
+        overflow: hidden;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: white;
+        height: 150px; /* Adjust height as needed */
+        padding: 20px;
+      }
+
+      /* Main Content Styles */
+      .content-section {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .main-content {
+        flex: 2;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+        padding: 40px;
+        border: 1px solid var(--border-color);
+      }
+
+      .sidebar {
+        flex: 1;
+      }
+
+      .section-title {
+        color: var(--primary-color);
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--accent-color);
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: var(--light-text);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      /* Highlights Section */
+      .highlights {
+        background: linear-gradient(to bottom right, var(--light-bg), #ffffff);
+        padding: 35px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        border: 1px solid var(--border-color);
+      }
+
+      .highlights h3 {
+        color: var(--primary-dark);
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+      }
+
+      .highlights h3::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        margin-right: 15px;
+      }
+
+      .highlight-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        border-left: 3px solid var(--secondary-color);
+      }
+
+      .highlight-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .highlight-item i {
+        color: var(--secondary-color);
+        margin-right: 20px;
+        margin-top: 3px;
+        font-size: 1.4rem;
+        min-width: 24px;
+      }
+
+      .highlight-item h4 {
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      .highlight-item p {
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        color: var(--lighter-text);
+      }
+
+      /* Programs Section */
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+      }
+
+      .program-card {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid var(--secondary-color);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+      }
+
+      .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .program-card h4 {
+        color: var(--primary-color);
+        margin-bottom: 12px;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .program-card p {
+        font-size: 0.95rem;
+        color: var(--lighter-text);
+      }
+
+      /* Sidebar Widgets */
+      .sidebar-widget {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+        padding: 30px;
+        margin-bottom: 35px;
+        border: 1px solid var(--border-color);
+      }
+
+      .sidebar-title {
+        color: var(--primary-color);
+        margin-bottom: 25px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .sidebar-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      .contact-info p {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 18px;
+        font-size: 0.95rem;
+      }
+
+      .contact-info i {
+        margin-right: 12px;
+        color: var(--secondary-color);
+        width: 20px;
+        text-align: center;
+        margin-top: 3px;
+      }
+
+      .contact-info a {
+        color: var(--primary-light);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .contact-info a:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+      }
+
+      .stats-list {
+        margin-top: 15px;
+      }
+
+      .stat-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px dashed var(--border-color);
+      }
+
+      .stat-label {
+        color: var(--light-text);
+        font-size: 0.95rem;
+      }
+
+      .stat-value {
+        font-weight: 600;
+        color: var(--primary-color);
+        font-size: 0.95rem;
+        margin-left: 39px;
+      }
+
+      /* Admission Section */
+      .admission-process {
+        margin-top: 35px;
+      }
+
+      .process-steps {
+        counter-reset: step;
+        margin-left: 20px;
+        margin-top: 25px;
+      }
+
+      .process-step {
+        position: relative;
+        padding-left: 60px;
+        margin-bottom: 30px;
+      }
+
+      .process-step::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(
+          to bottom right,
+          var(--secondary-color),
+          var(--secondary-dark)
+        );
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0 4px 8px rgba(255, 102, 0, 0.2);
+      }
+
+      .process-step h4 {
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      .process-step p {
+        font-size: 0.95rem;
+        color: var(--lighter-text);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        margin: 50px 0 30px;
+      }
+
+      .testimonial-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 25px;
+        position: relative;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 5rem;
+        color: rgba(0, 51, 102, 0.05);
+        font-family: serif;
+        line-height: 1;
+        z-index: 0;
+      }
+
+      .testimonial-content {
+        margin-bottom: 20px;
+        font-style: italic;
+        color: var(--light-text);
+        position: relative;
+        z-index: 1;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-author::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: var(--secondary-color);
+        margin-right: 10px;
+      }
+      .student-connect-cta {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        text-align: center;
+        border-left: 4px solid #2b6cb0;
+      }
+
+      .student-connect-cta p {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: #2d3748;
+      }
+
+      .connect-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: green;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .connect-button:hover {
+        background-color: #2b6cb0;
+      }
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .header-content h1 {
+          font-size: 2.4rem;
+        }
+
+        .header-content p {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content-section {
+          flex-direction: column;
+        }
+
+        .university-header {
+          height: 240px;
+          margin-bottom: 40px;
+        }
+
+        .header-content h1 {
+          font-size: 2rem;
+        }
+
+        .header-content p {
+          font-size: 1rem;
+        }
+
+        .main-content,
+        .sidebar-widget {
+          padding: 25px;
+        }
+
+        .programs-grid {
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        }
+      }
+
+      @media (max-width: 576px) {
+        .university-header {
+          height: 200px;
+        }
+
+        .header-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .university-logo {
+          height: 80px;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+        }
+
+        .highlight-item {
+          flex-direction: column;
+        }
+
+        .highlight-item i {
+          margin-bottom: 10px;
+        }
+
+        .programs-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Back Button */
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        margin: 30px 0;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        padding: 8px 15px;
+        border-radius: 6px;
+        background-color: rgba(0, 51, 102, 0.05);
+      }
+
+      .back-button:hover {
+        color: var(--secondary-color);
+        background-color: rgba(0, 51, 102, 0.1);
+        transform: translateX(-3px);
+      }
+
+      .back-button i {
+        margin-right: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover i {
+        transform: translateX(-3px);
+      }
+
+      /* Video Container */
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Badge */
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        background-color: var(--success-color);
+        color: white;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      @media (max-width: 768px) {
+        /* Move student experience section for mobile */
+        .testimonials {
+          order: -1; /* This will move it before other flex items */
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+        
+        /* Adjust the content-section flex container for mobile */
+        .content-section {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        /* Ensure main content order follows testimonials */
+        .main-content {
+          order: 1;
+        }
+        
+        /* Ensure sidebar comes after main content */
+        .sidebar {
+          order: 2;
+        }
+        
+        /* Remove the student experience section from sidebar in mobile */
+        .sidebar .testimonials {
+          display: none;
+        }
+      }
+    
+      /* Add this to show the student experience section only in mobile in its new position */
+      @media (min-width: 769px) {
+        .mobile-testimonials {
+          display: none;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <a href="https://www.kevaat.com/university.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Universities
+      </a>
+
+      <header class="university-header"></header>
+
+      <!-- Add this right after the university-header in your HTML -->
+<div class="mobile-testimonials">
+    <section class="testimonials">
+      <h2 class="section-title">Student Experiences</h2>
+      <div class="student-connect-cta">
+        <p>
+          Want to talk directly with current students at Amity University?
+        </p>
+        <a href="https://www.kevaat.com" class="connect-button" target="_blank">
+          Register for a 30-minute 1-on-1 Video Call
+        </a>
+      </div>
+    </section>
+  </div>
+      <div class="content-section">
+        <main class="main-content">
+          <section class="about-section">
+            <h2 class="section-title">About Amity University</h2>
+            <p>
+                Established in 2008, Amity University Rajasthan (Jaipur) is a prominent private university situated in a scenic 152-acre campus on the Delhi-Jaipur Highway. It is part of the renowned Amity Education Group, known for its commitment to academic excellence, global standards, and holistic development.
+
+            </p>
+
+          </section>
+
+          <section class="highlights">
+            <h3>Why Choose Amity University?</h3>
+            <div class="highlight-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <h4>
+                    Academic Excellence and Recognition   <span class="badge">Top Rating</span>
+                </h4>
+                <p>
+                    Amity University Jaipur is recognized by the University Grants Commission (UGC) and is accredited with NAAC 'A+' Grade. It follows a research-driven academic framework aligned with international standards and national education policies.  </p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-industry"></i>
+              <div>
+                <h4>Research, Innovation & Sustainability  </h4>
+                <p>
+                    The university houses multiple research centers focusing on areas like nanotechnology, biotechnology, AI, and environmental sciences. Amity also emphasizes sustainability, green practices, and social responsibility on campus. </p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-globe-americas"></i>
+              <div>
+                <h4>Multidisciplinary Learning & Global Curriculum  </h4>
+                <p>
+                    With over 35 academic programs across 12 schools, the university fosters interdisciplinary education. Curriculum is developed in collaboration with industry leaders and global experts to maintain relevance and innovation. </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="programs-section">
+            <h2 class="section-title">Academic Programs</h2>
+            <p>
+                Amity University Jaipur offers a broad spectrum of programs tailored to prepare students for the evolving demands of global careers.  </p>
+
+            <div class="programs-grid">
+              <div class="program-card">
+                <h4>
+                  <i
+                    class="fas fa-laptop-code"
+                    style="color: var(--secondary-color); margin-right: 8px"
+                  ></i>
+                  Engineering & Technology
+                </h4>
+                <p>
+                    B.Tech, M.Tech, and Ph.D. in Computer Science, Civil, Electronics, Mechanical, etc.  </p>
+              </div>
+              <div class="program-card">
+                <h4>
+                  <i
+                    class="fas fa-chart-line"
+                    style="color: var(--secondary-color); margin-right: 8px"
+                  ></i>
+                  Business Management
+                </h4>
+                <p>
+                    Programs like BBA, MBA, B.Com, and M.Com with industry-oriented curriculum. </p>
+              </div>
+              <div class="program-card">
+                <h4>
+                  <i
+                    class="fas fa-code"
+                    style="color: var(--secondary-color); margin-right: 8px"
+                  ></i>
+                  Applied Sciences  
+                </h4>
+                <p>
+                    Courses in Physics, Chemistry, Mathematics, and Biotechnology.  </p>
+              </div>
+              <div class="program-card">
+                <h4>
+                  <i
+                    class="fas fa-flask"
+                    style="color: var(--secondary-color); margin-right: 8px"
+                  ></i>
+                  Hospitality & Tourism  
+                </h4>
+                <p>
+                    Courses in Hotel Management, Culinary Arts, and Tourism Studies.
+                </p>
+              </div>
+              <div class="program-card">
+                <h4>
+                  <i
+                    class="fas fa-gavel"
+                    style="color: var(--secondary-color); margin-right: 8px"
+                  ></i>
+                  Law
+                </h4>
+                <p>
+                    Integrated Law programs like BA LLB, BBA LLB, and LLM offered under the Amity Law School. </p>
+              </div>
+              <div class="program-card">
+                <h4>
+                  <i
+                    class="fas fa-drafting-compass"
+                    style="color: var(--secondary-color); margin-right: 8px"
+                  ></i>
+                  Design and Architecture
+                </h4>
+                <p>
+                    Programs like B.Des, M.Des, B.Arch, and courses in Visual Arts. </p>
+              </div>
+            </div>
+          </section>
+          <br />
+          <section class="admission-section">
+            <h2 class="section-title">Admission Process</h2>
+            <p>
+                Admissions are based on merit and/or performance in entrance examinations conducted by Amity or other national-level exams.   </p>
+
+            <div class="admission-process">
+              <h3>Application Procedure:</h3>
+              <div class="process-steps">
+                <div class="process-step">
+                  <h4>Online Application</h4>
+                  <p>
+                    Fill the application form on Amity’s official website.   </p>
+                </div>
+                <div class="process-step">
+                  <h4>Document Submission</h4>
+                  <p>
+                    Submit academic records and ID proofs.</p>
+                </div>
+                <div class="process-step">
+                  <h4>Counseling Session</h4>
+                  <p>
+                    Appear for an entrance exam or personal interview, as applicable.   </p>
+                </div>
+                <div class="process-step">
+                  <h4>Fee Payment & Enrollment</h4>
+                  <p>
+                    Confirm admission by fee submission and complete onboarding.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </main>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            
+          <section class="testimonials">
+            <h2 class="section-title">Student Experiences</h2>
+
+            <div class="student-connect-cta">
+              <p>
+                Want to talk directly with current students a Amity University?
+              </p>
+              <a
+                href="https://www.kevaat.com"
+                class="connect-button"
+                target="_blank"
+              >
+                Register for a 30-minute 1-on-1 Video Call
+              </a>
+            </div>
+          </section><br>
+            <h3 class="sidebar-title">Contact Information</h3>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-phone-alt"></i>
+                <span
+                  >Admission Helpline:
+                  <a href="tel:+91-1800-121-2688">+91-1800-121-2688</a>,
+                  </span
+                >
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <span
+                  >Email:
+                  <a href="mailto:admissions@jpr.amity.edu"
+                    >admissions@jpr.amity.edu</a
+                  ></span
+                >
+              </p>
+              <p>
+                <i class="fas fa-globe"></i>
+                <span
+                  >Website:
+                  <a href="https://www.amity.edu/jaipur" target="_blank"
+                    > www.amity.edu/jaipur</a
+                  ></span
+                >
+              </p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >Kant Kalwar, NH-11C, Jaipur Delhi Highway, Jaipur – 303002, Rajasthan, India</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">University At A Glance</h3>
+            <div class="stats-list">
+              <div class="stat-item">
+                <span class="stat-label">Established</span>
+                <span class="stat-value">2008</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Campus Area</span>
+                <span class="stat-value">152 Acres  </span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Students</span>
+                <span class="stat-value">7,000+</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Faculty</span>
+                <span class="stat-value">450+</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">International Tie-ups</span>
+                <span class="stat-value">100+ with global universities and institutions</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Campus Virtual Tour</h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vPUghFXL3mw?si=irOpXNT2kWm0_y6v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <p style="margin-top: 15px; font-size: 0.9rem; text-align: center">
+                Explore the lush green campus, high-tech labs, residential facilities, sports complex, and academic infrastructure of Amity University Jaipur through their virtual campus experience on the official website.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      // Enhanced interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animate cards on scroll
+        const animateOnScroll = function () {
+          const cards = document.querySelectorAll(
+            ".program-card, .highlight-item, .testimonial-card"
+          );
+
+          cards.forEach((card, index) => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (cardPosition < screenPosition) {
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+              }, index * 100);
+            }
+          });
+        };
+
+        // Set initial state for animation
+        const cards = document.querySelectorAll(
+          ".program-card, .highlight-item, .testimonial-card"
+        );
+        cards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "all 0.5s ease";
+        });
+
+        // Run once on load
+        animateOnScroll();
+
+        // Run on scroll
+        window.addEventListener("scroll", animateOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Back button animation
+        const backButton = document.querySelector(".back-button");
+        if (backButton) {
+          backButton.addEventListener("mouseenter", function () {
+            this.querySelector("i").style.transform = "translateX(-5px)";
+          });
+
+          backButton.addEventListener("mouseleave", function () {
+            this.querySelector("i").style.transform = "translateX(0)";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
